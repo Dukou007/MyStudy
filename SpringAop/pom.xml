@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.study</groupId>
-    <artifactId>aoptest</artifactId>
+    <artifactId>SpringAop</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>AopTest</name>
+    <name>SpringAop</name>
     <description>AopTest</description>
 
     <properties>

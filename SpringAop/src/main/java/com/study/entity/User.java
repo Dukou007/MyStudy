@@ -2,6 +2,8 @@ package com.study.entity;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
 
 /**
  * @description:entity
@@ -15,19 +17,8 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     private String name;
-    private Integer age;
-
-    public User(String hello, Integer i) {
-    }
-
-    @Override
-    public String toString() {
-        return "User{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", age=" + age +
-                '}';
-    }
+    private String email;
+    private Collection<UserAddress> userAddresses=new ArrayList<UserAddress>();
 
     public Integer getId() {
         return id;
@@ -45,20 +36,22 @@ public class User implements Serializable {
         this.name = name;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getEmail() {
+        return email;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setEmail(String email) {
+        this.email = email;
+    }
+    @OneToMany(cascade = CascadeType.ALL,fetch = FetchType.LAZY,mappedBy ="user")
+    public Collection<UserAddress> getUserAddresses() {
+        return userAddresses;
+    }
+
+    public void setUserAddresses(Collection<UserAddress> userAddresses) {
+        this.userAddresses = userAddresses;
     }
 
     public User() {
-    }
-
-    public User(Integer id, String name, Integer age) {
-        this.id = id;
-        this.name = name;
-        this.age = age;
     }
 }
