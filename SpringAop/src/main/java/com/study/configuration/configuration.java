@@ -2,6 +2,7 @@ package com.study.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.stereotype.Component;
 
 /**
@@ -11,6 +12,6 @@ import org.springframework.stereotype.Component;
  */
 @Configuration
 @ComponentScan(basePackages = "com.study")
-@Component
+@EnableAspectJAutoProxy
 public class configuration {
 }

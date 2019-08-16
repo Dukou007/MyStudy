@@ -14,7 +14,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class AoptestApplicationTests {
+public class SpringAopApplicationTests {
 
     @Autowired
     private UserDao userDao;
@@ -23,16 +23,7 @@ public class AoptestApplicationTests {
 
     @Test
     public void addUser() {
-        User user = new User(12, "hello", 19);
-//        UserService userService= new UserServiceImpl();
-//        UserService userService = UserServiceFactory.createUserService();
-        UserService userservice = UserFactory2.createUserservice();
-        userService.addUser(user);
-       /* userService.deleteUser(
-                1);
-        userService.updateUser(user);
-        userService.findByNameLike("hello");*/
-        System.out.println("game over");
+        System.out.println("hello");
     }
 
 }
