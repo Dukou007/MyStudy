@@ -1,5 +1,6 @@
 package com.study.Aspect;
 
+import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.AfterReturning;
@@ -15,6 +16,7 @@ import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.validation.constraints.AssertTrue;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
@@ -24,11 +26,11 @@ import java.util.Arrays;
  * @date:2019/8/16 15:56
  */
 @Aspect
-@EnableAutoConfiguration
+@Component
 public class WebLogAcpectJ {
     private Logger logger = LoggerFactory.getLogger(WebLogAcpectJ.class);
 
-    @Pointcut("execution(* com.study.*.*(..))")
+    @Pointcut("execution(* com.study..*.*(..))")
     public void webLog() {
 
     }
@@ -40,7 +42,8 @@ public class WebLogAcpectJ {
         System.out.println("URL: " + request.getRequestURL().toString());
         System.out.println("httpMethod: " + request.getMethod());
         System.out.println("IP: " + request.getRemoteAddr());
-        logger.info("CLass_method: " + joinPoint.getSignature().getDeclaringTypeName() + "." + joinPoint.getSignature().getName());
+        System.out.println(joinPoint);
+        logger.info("CLass_method: " + joinPoint.getSignature().getDeclaringTypeName() + ".。。。" + joinPoint.getSignature().getName());
         logger.info("args: " + Arrays.toString(joinPoint.getArgs()));
     }
 

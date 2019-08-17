@@ -13,5 +13,5 @@ import org.springframework.stereotype.Component;
 @Configuration
 @ComponentScan(basePackages = "com.study")
 @EnableAspectJAutoProxy
-public class configuration {
+public class Aopconfiguration {
 }
