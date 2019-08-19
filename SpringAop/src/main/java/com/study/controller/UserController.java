@@ -19,5 +19,9 @@ public class UserController {
         return "hello - "+name;
     }
 
+    public String sayHehe(String name){
+        return "hehe"+name;
+    }
+
 }
 
