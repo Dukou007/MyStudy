@@ -2,3 +2,4 @@ ManyToMany/.gitignore
 *.cmd
 ManyToMany/.mvn/
 *.iml
+*.class

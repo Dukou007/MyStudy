@@ -1,7 +1,11 @@
 package com.study.controller;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * @description:
@@ -9,8 +13,10 @@ import org.springframework.web.servlet.mvc.Controller;
  * @date:2019/8/17 14:16
  */
 public class UserController implements Controller {
+
     @Override
-    public ModelAndView handleRequest(javax.servlet.http.HttpServletRequest httpServletRequest, javax.servlet.http.HttpServletResponse httpServletResponse) throws Exception {
+    public ModelAndView handleRequest(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse) throws Exception {
         return null;
+
     }
 }
