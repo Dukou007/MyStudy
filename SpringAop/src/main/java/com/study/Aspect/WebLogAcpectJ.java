@@ -3,10 +3,7 @@ package com.study.Aspect;
 import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import org.aopalliance.intercept.Joinpoint;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.AfterReturning;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Before;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -51,6 +48,11 @@ public class WebLogAcpectJ {
     public void doAfterReturning(Object ret) throws Throwable {
         // 处理完请求，返回内容
         logger.info("RESPONSE : " + ret);
+    }
+
+    @After("webLog()")
+    public void after(){
+        System.out.println("搞定了……");
     }
 
 }
