@@ -20,6 +20,7 @@ public class UserController {
     }
     @RequestMapping(value = "sayHi",method = RequestMethod.GET)
     public String sayHehe(String name){
+        int t=1/0;
         return "hehe"+name;
     }
 
