@@ -18,7 +18,7 @@ public class UserController {
     public String sayHello(String name){
         return "hello - "+name;
     }
-
+    @RequestMapping(value = "sayHi",method = RequestMethod.GET)
     public String sayHehe(String name){
         return "hehe"+name;
     }
